@@ -13,11 +13,9 @@ export const create = async (req, res) => {
     res.status(200).json(savedUser);
     // return res.json("Hello world" )
   } catch (error) {
-    res.status(500).json({ errorMessage: error.message });
+    res.status(500).json({ error: "Internet server error" });
   }
 };
-
-
 
 export const fetch = async (req, res) => {
   try {
@@ -41,7 +39,7 @@ export const update = async (req, res)=>{
         const updateUser = await User.findByIdAndUpdate(id, req.body, {new : true});
         res.status(201).json(updateUser);
     } catch (error) {
-        res.status(500).json({error : " Internal Server Error.. "})
+        res.status(500).json({error : " Internal Server Error. "})
     }
 }
 
