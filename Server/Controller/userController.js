@@ -41,7 +41,7 @@ export const update = async (req, res)=>{
         const updateUser = await User.findByIdAndUpdate(id, req.body, {new : true});
         res.status(201).json(updateUser);
     } catch (error) {
-        res.status(500).json({error : " Internal Server Error. "})
+        res.status(500).json({error : " Internal Server Error.. "})
     }
 }
 
